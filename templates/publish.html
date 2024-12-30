@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+
+
+{% block main %}
+
+    <form class="publish" action="/publish" method="post">
+        <div class="form-group">
+            <label class="heading" for="title">Project Title:</label>
+            <input class="form-control" name="title" placeholder="Webdevelopment,Musician.." type="text" required>
+            <label class="heading" for="description">Project Description:</label>
+            <input class="form-control" name="description" placeholder="This project is based on.." type="text" required>
+            <label class="heading" for="budget">Project budget:(In USD)</label>
+            <input class="form-control" name="budget" placeholder=".." type="number" min="1" required>
+            <label class="heading" for="deadline">Project Deadline:</label>
+            <input class="form-control" name="deadline" placeholder="Deadline" type="date" required>
+            <label class="heading" for="email">For Contact:</label>
+            <input class="form-control" name="email" placeholder="abxyz@gmail.com" type="email" required>
+
+        </div>
+        <button class="btn btn-primary" type="submit">Post</button>
+    </form>
+{% endblock %}

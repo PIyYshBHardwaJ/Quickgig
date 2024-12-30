@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    home
+{% endblock %}
+
+{% block main %}
+<!-- {% if session["user_id"] %} -->
+
+<div class="text-center mb-4">
+    <h1>Find Your Perfect Opportunity</h1>
+    <p>Whether you're looking to hire skilled freelancers or showcase your talents to the world, we've got you covered. Select an option below to get started!</p>
+</div>
+
+
+        <div id="container">
+            <div class="box">
+                <a class="nav-link" href="/Hire">Hire a freelancer</a>
+            </div>
+            <div class="box">
+                <a class="nav-link" href="/earn">Earn money freelancing</a>
+
+            </div>
+        </div>
+
+<!-- {% endif %} -->
+
+{% endblock %}
+

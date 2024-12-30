@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Projects Posted
+{% endblock %}
+
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Budget</th>
+            <th scope="col">Deadline</th>
+            <th scope="col">Contact</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in rows %}
+            <tr>
+                <td>{{row['title']}}</td>
+                <td>{{row['description']}}</td>
+                <td>{{row['budget']}}</td>
+                <td>{{row['deadline']}}</td>
+                <td>{{row['email']}}</td>
+                <td>
+                    <form class ="delete"action="/Hire" method="post">
+                        <!-- <input type="hidden" name="id" value="{{ row.id }}"> -->
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

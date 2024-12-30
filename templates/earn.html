@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Hire
+{% endblock %}
+
+{% block main %}
+
+
+<header>
+    <div class="contain" style="display: block;">
+        <!-- Title centered -->
+        <h2 class="text1">Welcome to the Freelancer Hiring Platform</h2>
+
+        <!-- Description aligned to the left -->
+        <p class="mb" style="text-align: left;">
+            Here, you can explore a list of talented freelancers with diverse skills and experience. Whether you are looking to hire for a specific project or want to learn more about the experts in the field, this page has everything you need. Browse through the list and make your choice!
+        </p>
+
+        <!-- Button links aligned to the right -->
+        <div style="text-align: right; margin-bottom: 20px;">
+            <a href="/create" class="bO">Create Profile</a>
+            <a href="/profile" class="bO">My Profile</a>
+        </div>
+    </div>
+</header>
+
+<div class="cd" style="text-align: center;" style="display: block;">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Budget</th>
+            <th scope="col">Deadline</th>
+            <th scope="col">Contact</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in rows %}
+            <tr>
+                <td>{{row['title']}}</td>
+                <td>{{row['description']}}</td>
+                <td>{{row['budget']}}</td>
+                <td>{{row['deadline']}}</td>
+                <td>{{row['email']}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My profile
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Bio</th>
+            <th scope="col">Experience</th>
+            <th scope="col">Contact</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in rows %}
+            <tr>
+                <td>{{row['name']}}</td>
+                <td>{{row['bio']}}</td>
+                <td>{{row['experience']}}</td>
+                <td>{{row['email']}}</td>
+                <td>
+                    <form action="/earn" method="post" >
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+

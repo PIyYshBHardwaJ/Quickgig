@@ -1,0 +1,822 @@
+
+body {
+    margin: 0;
+    padding-top: 0px; /* Matches navbar height */
+    background-color: #120227; /* Fallback color */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+}
+
+/* Transparent Navbar with Dark Background */
+nav {
+    background-color: rgba(18, 2, 39, 0.85); /* Slight transparency */
+    padding: 5px 10px; /* Decreased height by reducing padding */
+    /* border-bottom: 0px solid #fff; Light border for contrast */
+    position: sticky; /* Keeps navbar at the top when scrolling */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top of other content */
+    backdrop-filter: blur(10px); /* Optional blur effect on background */
+}
+
+/* Navbar brand styling */
+nav .navbar-brand {
+    font-size: 2rem; /* Adjusted size for better appearance */
+    font-weight: bold; /* Added boldness for emphasis */
+    color: white; /* Default color for the brand */
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+nav .navbar-brand:hover {
+    color: black; /* Yellow color on hover */
+}
+.bg-light {
+    --bs-bg-opacity: 1;
+    background-color: rgb(28 17 48 / 50%) !important;
+}
+/* Link colors */
+nav .navbar-nav .nav-link {
+    color: white; /* White text for links */
+    font-size: 1.1rem; /* Slightly larger font for readability */
+    margin-left: 20px; /* Space between links */
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+nav .navbar-nav .nav-link:hover {
+    color: black; /* Yellow on hover for links */
+}
+
+/* Adjusting the colors for brand elements */
+nav .navbar-brand .blue {
+    color: #537fbe;
+}
+
+nav .navbar-brand .red {
+    color: #ea433b;
+}
+
+nav .navbar-brand .yellow {
+    color: #f5b82e;
+}
+
+nav .navbar-brand .green {
+    color: #2e944b;
+}
+
+/* Optional: Add a shadow to brand */
+nav .navbar-brand {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Make the navbar more responsive */
+@media (max-width: 768px) {
+    nav {
+        padding: 8px 15px; /* Reduced padding on smaller screens */
+    }
+
+    nav .navbar-brand {
+        font-size: 1.5rem; /* Smaller font on mobile */
+    }
+
+    nav .navbar-nav .nav-link {
+        font-size: 1rem; /* Smaller font size on mobile */
+        margin-left: 15px; /* Reduced margin on mobile */
+    }
+}
+
+
+/* Animated background styles */
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #120227;
+    overflow: hidden;
+    z-index: -1; /* Places the background behind everything else */
+}
+
+.background span {
+    width: 19vmin;
+    height: 19vmin;
+    border-radius: 19vmin;
+    backface-visibility: hidden;
+    position: absolute;
+    animation: move infinite linear;
+}
+.border {
+    border: none !important;
+}
+
+
+@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+
+.background span:nth-child(0) {
+    color: #48474d;
+    top: 61%;
+    left: 68%;
+    animation-duration: 9s;
+    animation-delay: -7s;
+    transform-origin: -12vw -10vh;
+    box-shadow: -38vmin 0 4.90132836284151vmin currentColor;
+}
+.background span:nth-child(1) {
+    color: #48474d;
+    top: 87%;
+    left: 40%;
+    animation-duration: 10s;
+    animation-delay: -9s;
+    transform-origin: -10vw 13vh;
+    box-shadow: -38vmin 0 5.644684005831488vmin currentColor;
+}
+.background span:nth-child(2) {
+    color: #48474d;
+    top: 71%;
+    left: 86%;
+    animation-duration: 12s;
+    animation-delay: -8s;
+    transform-origin: -16vw -10vh;
+    box-shadow: 38vmin 0 5.167353396264433vmin currentColor;
+}
+.background span:nth-child(3) {
+    color: #201d4e;
+    top: 25%;
+    left: 96%;
+    animation-duration: 12s;
+    animation-delay: -9s;
+    transform-origin: -8vw 6vh;
+    box-shadow: -38vmin 0 5.209581105816179vmin currentColor;
+}
+.background span:nth-child(4) {
+    color: #201d4e;
+    top: 80%;
+    left: 5%;
+    animation-duration: 13s;
+    animation-delay: -1s;
+    transform-origin: -9vw -22vh;
+    box-shadow: 38vmin 0 5.410748857035344vmin currentColor;
+}
+.background span:nth-child(5) {
+    color: #48474d;
+    top: 86%;
+    left: 36%;
+    animation-duration: 13s;
+    animation-delay: -3s;
+    transform-origin: 18vw 0vh;
+    box-shadow: 38vmin 0 5.086395501364369vmin currentColor;
+}
+.background span:nth-child(6) {
+    color: #48474d;
+    top: 33%;
+    left: 75%;
+    animation-duration: 9s;
+    animation-delay: -4s;
+    transform-origin: 13vw -1vh;
+    box-shadow: -38vmin 0 5.010724487964916vmin currentColor;
+}
+.background span:nth-child(7) {
+    color: #48474d;
+    top: 28%;
+    left: 32%;
+    animation-duration: 14s;
+    animation-delay: -10s;
+    transform-origin: -8vw 17vh;
+    box-shadow: 38vmin 0 5.145808325708052vmin currentColor;
+}
+
+/* Styling for the login box */
+.login-box {
+    background-color: white;  /* White background */
+    border-radius: 20px;      /* Rounded corners */
+    width: 60%;               /* Width of the box (1/4th of the screen width) */
+    padding: 100px;            /* Padding inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow around the box */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+/* Optional: Style the form elements */
+.login-box form {
+    width: 100%;  /* Ensure the form takes up the full width of the box */
+}
+
+/* Input fields style */
+.login-box .form-control {
+    border-radius: 10px;  /* Rounded input fields */
+    margin-bottom: 15px;   /* Space between the input fields */
+    padding: 10px;         /* Padding inside the input fields */
+}
+
+/* Button styling */
+.login-box .btn-primary {
+    width: 100%;           /* Make the button take up the full width */
+    padding: 12px;         /* Padding inside the button */
+    border-radius: 10px;   /* Rounded button */
+}
+
+/* Optional: Hover effect for the button */
+.login-box .btn-primary:hover {
+    background-color: #0069d9; /* Darken button color on hover */
+    border-color: #0062cc;
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .login-box {
+        width: 80%;  /* Increase width for smaller screens */
+    }
+}
+
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: calc(100vh - 70px); Adjust for navbar height */
+    padding-top: 100px;
+    gap: 20px;
+}
+
+.box {
+    width: 45%;
+    height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #120227;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.box:nth-child(1) {
+    background: linear-gradient(135deg, #537fbe, #2e944b);
+    color: white;
+}
+
+.box:nth-child(2) {
+    background: linear-gradient(135deg, #ea433b, #f5b82e);
+    color: white;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .box {
+        width: 80%;
+    }
+}
+
+
+/* Styling for the heading */
+.text-center h1 {
+    font-size: 80px; /* Larger size for the heading */
+    font-weight: 700; /* Bold */
+    color: #2c3e50; /* Dark color for better contrast */
+    margin-bottom: 15px; /* Space below the heading */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+}
+
+/* Styling for the paragraph */
+.text-center p {
+    font-size: 30px; /* Medium size for the text */
+    color: #7f8c8d; /* Light grey color */
+    line-height: 1.6; /* Improved readability with proper line height */
+    margin-top: 0;
+    margin-bottom: 30px; /* Space below the paragraph */
+    font-family: 'Arial', sans-serif; /* Simple and clean font */
+}
+
+
+/* Navbar styling */
+.navbar {
+    background-color: #007bff; /* Blue background */
+    padding: 15px;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px;
+    text-transform: uppercase;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    background-color: #0056b3;
+    border-radius: 4px;
+}
+
+/* Container for page title and description */
+.container {
+    padding-top: 30px;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #6c757d;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Table styling */
+.table {
+    margin-top: 40px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow-x: auto;
+}
+
+.table th, .table td {
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.table th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.table td {
+    background-color: #f8f9fa;
+}
+
+.table-striped tbody tr:nth-child(odd) td {
+    background-color: #e9ecef;
+}
+
+.table-striped tbody tr:hover {
+    background-color: #d6d8db; /* Light gray on hover */
+}
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+    }
+}
+
+
+/* Page Title and Description */
+.container {
+    padding-top: 30px;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #6c757d;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Styling for Links (Publish Project & Projects Posted) */
+.link-style {
+    font-size: 20px;
+    font-weight: 600;
+    color: #007bff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: #f0f8ff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.link-style:hover {
+    background-color: #0056b3;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+}
+
+.link-style:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Table Styling */
+.table {
+    margin-top: 40px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow-x: auto;
+}
+
+.table th, .table td {
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.table th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.table td {
+    background-color: #f8f9fa;
+}
+
+.table-striped tbody tr:nth-child(odd) td {
+    background-color: #e9ecef;
+}
+
+.table-striped tbody tr:hover {
+    background-color: #d6d8db; /* Light gray on hover */
+}
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+    }
+}
+
+
+.contain {
+    display: block;
+    width: 100%;
+    max-width: 1200px; /* Ensure content does not stretch too far */
+    margin: 0 auto; /* Centers the content */
+    padding: 40px 20px;
+}
+
+.text1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mb {
+    font-size: 1.1rem;
+    color: #6c757d;
+    text-align: left;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.bO {
+    padding: 10px 20px;
+    background-color: #295483;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-right: 15px;
+}
+
+.bO:hover {
+    background-color: #0056b3;
+}
+
+.cd {
+    width: 100%;
+    max-width: 1200px; /* Ensures the table is centered and not too wide */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(53 43 43 / 0%); /* White background for the table */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for some depth */
+}
+
+.ad {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: auto;
+}
+
+.ad th, .ad td {
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.ad th {
+    background-color: #343a40;
+    color: #fff;
+    font-weight: bold;
+}
+
+.ad td {
+    background-color: #f8f9fa;
+}
+
+.ad tr:nth-child(even) td {
+    background-color: #e9ecef;
+}
+
+.ad tr:hover td {
+    background-color: #d6d8db;
+    cursor: pointer;
+}
+
+/* Responsive Design for Small Screens */
+@media screen and (max-width: 768px) {
+    .contain {
+        padding: 20px;
+    }
+
+    .text1 {
+        font-size: 1.6rem; /* Smaller heading on mobile */
+    }
+
+    .mb {
+        font-size: 1rem; /* Smaller text on mobile */
+    }
+
+    .bO {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    .cd {
+        padding: 10px;
+    }
+
+    .ad th, .ad td {
+        padding: 8px;
+    }
+
+    .ad th {
+        font-size: 0.9rem;
+    }
+
+    .ad td {
+        font-size: 0.9rem;
+    }
+}
+
+/* Form Styling */
+/* form {
+    width:50%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    margin-top: 500px;
+} */
+.publish {
+    width:50%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    margin-top: 100px;
+}
+.delete {
+    width:100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    /* padding: 4px 40px; */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    /* margin-top: 100px; */
+}
+/* Heading Styling */
+.heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Input Styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input.form-control {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input.form-control:focus {
+    border-color: #2575fc; /* Focus border color */
+    outline: none;
+    background-color: #fff; /* White background when focused */
+}
+
+input.form-control::placeholder {
+    color: #aaa;
+}
+
+/* Container to center the content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Header Styling */
+th {
+    padding: 12px;
+    text-align: left;
+    background-color: #5f6368;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Table Data Styling */
+td {
+    padding: 12px;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Hover Effect for Rows */
+tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Button Styling */
+button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #c0392b;
+}
+
+/* Button Focus Effect */
+button:focus {
+    outline: none;
+}
+
+/* Table Row Styling for Empty Table */
+tbody.empty {
+    text-align: center;
+    font-size: 16px;
+    color: #aaa;
+}
+
+/* Form Styling */
+form {
+    display: inline-block;
+    margin: 0;
+}
+
+/* Responsive Table Styling */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    button {
+        padding: 6px 12px;
+    }
+}
+
+
+
+

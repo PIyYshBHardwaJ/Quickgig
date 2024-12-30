@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+
+
+{% block main %}
+
+    <form class="publish" action="/create" method="post">
+        <div class="form-group">
+            <label class="heading" for="name">Name:</label>
+            <input class="form-control" name="name" placeholder="..." type="text" required>
+            <label class="heading" for="bio">Bio:</label>
+            <input class="form-control" name="bio" placeholder="Skills, projects made.." type="text" required>
+            <label class="heading" for="experience">Experience:</label>
+            <input class="form-control" name="experience" placeholder="Beginner.." type="text" required>
+            <label class="heading" for="email">For Contact:</label>
+            <input class="form-control" name="email" placeholder="abxyz@gmail.com" type="email" required>
+
+        </div>
+        <button class="btn btn-primary" type="submit">Create</button>
+    </form>
+{% endblock %}
